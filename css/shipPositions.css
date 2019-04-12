@@ -1,0 +1,71 @@
+/* This document sets the locations for each ship on the map. It does not influence */
+/* visibility or any other behavior or display options. */
+
+.topship {
+    top: 30%;
+}
+
+.bottomship {
+    top: 90%;
+    transform: rotate(180deg);
+}
+
+#NASA0, #USSR0 {
+    left: 23%;
+}
+
+#NASA0 {
+    top: 30%;
+    transform: rotate(-45deg);
+}
+
+#USSR12 {
+    top: 22%;
+    transform: rotate(90deg);
+}
+
+#NASA1, #NASA11, #USSR1, #USSR11 {
+    left: 31%;
+}
+
+#NASA2, #NASA10, #USSR2, #USSR10 {
+    left: 44%;
+}
+
+#NASA3, #NASA9, #USSR3, #USSR9 {
+    left: 57%;
+}
+
+#NASA4, #NASA8, #USSR4, #USSR8 {
+    left: 70%;
+}
+
+#NASA5, #NASA7, #USSR5, #USSR7 {
+    left: 83%;
+}
+
+#NASA6 {
+    left: 89%;
+    top: 38%;
+    transform: rotate(-45deg);
+}
+
+#USSR6 {
+    left: 90%;
+    top: 80%;
+    transform: rotate(225deg);
+}
+
+#NASA12, #USSR12 {
+    left: 15%;
+}
+
+#NASA12 {
+    transform: rotate(90deg);
+    top: 92%;
+}
+
+#USSR0 {
+    transform: rotate(225deg);
+    top: 92%;
+}

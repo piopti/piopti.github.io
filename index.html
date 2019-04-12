@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Apollo Program Trivia</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/shipPositions.css">
+        <link rel="icon" href="images/moon.jpg">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="background">
+            <img src="images/earth.jpg" id="earth" class="planet">
+            <img src="images/moon.jpg" id="moon" class="planet">
+            <!-- NASA Ships ------------------------------------------------------------ -->
+            <img id="NASA0" class="ship" src="images/ApolloCSM.png">
+            <img id="NASA1" class="ship topship" src="images/ApolloCSM.png">
+            <img id="NASA2" class="ship topship" src="images/ApolloCSM.png">
+            <img id="NASA3" class="ship topship" src="images/ApolloCSM.png">
+            <img id="NASA4" class="ship topship" src="images/ApolloCSM.png">
+            <img id="NASA5" class="ship topship" src="images/ApolloCSM.png">
+            <img id="NASA6" class="ship" src="images/ApolloCSM.png">
+            <img id="NASA7" class="ship bottomship" src="images/ApolloCSM.png">
+            <img id="NASA8" class="ship bottomship" src="images/ApolloCSM.png">
+            <img id="NASA9" class="ship bottomship" src="images/ApolloCSM.png">
+            <img id="NASA10" class="ship bottomship" src="images/ApolloCSM.png">
+            <img id="NASA11" class="ship bottomship" src="images/ApolloCSM.png">
+            <img id="NASA12" class="ship" src="images/ApolloCSM.png">
+            <img id="NASAMover" class="ship mover" src="images/ApolloCSM.png">
+            <!-- USSR Ships ----------------------------------------------------------- -->
+            <img id="USSR0" class="ship" src="images/Soyuz7K-LOK.png">
+            <img id="USSR1" class="ship bottomship" src="images/Soyuz7K-LOK.png">
+            <img id="USSR2" class="ship bottomship" src="images/Soyuz7K-LOK.png">
+            <img id="USSR3" class="ship bottomship" src="images/Soyuz7K-LOK.png">
+            <img id="USSR4" class="ship bottomship" src="images/Soyuz7K-LOK.png">
+            <img id="USSR5" class="ship bottomship" src="images/Soyuz7K-LOK.png">
+            <img id="USSR6" class="ship" src="images/Soyuz7K-LOK.png">
+            <img id="USSR7" class="ship topship" src="images/Soyuz7K-LOK.png">
+            <img id="USSR8" class="ship topship" src="images/Soyuz7K-LOK.png">
+            <img id="USSR9" class="ship topship" src="images/Soyuz7K-LOK.png">
+            <img id="USSR10" class="ship topship" src="images/Soyuz7K-LOK.png">
+            <img id="USSR11" class="ship topship" src="images/Soyuz7K-LOK.png">
+            <img id="USSR12" class="ship" src="images/Soyuz7K-LOK.png">
+            <img id="USSRMover" class="ship mover" src="images/Soyuz7K-LOK.png">
+            <!-- Only movers are visible during gameplay. The others are placeholders to set the location -->
+            <!-- The other ships will be visible on game end to show info about the mission -->
+            <div id="NASAScore" class="score">
+                <h2>NASA Score</h2>
+                <h2 id="NASACorrect"></h2>
+            </div>
+            <div id="USSRScore" class="score">
+                    <h2>USSR Score</h2>
+                    <h2 id="USSRCorrect"></h2>
+            </div>
+            <div id="missions">
+                <div id="row1">
+                    <div class="mission">
+                        <img class="minipatch" src="images/Apollo1.png">
+                        <p>Apollo 1</p>
+                    </div>
+                    <div class="mission">
+                        <img class="minipatch" src="images/Apollo7.png">
+                        <p>Apollo 7</p>
+                    </div>
+                    <div class="mission">
+                        <img class="minipatch" src="images/Apollo8.png">
+                        <p>Apollo 8</p>
+                    </div>
+                    <div class="mission">
+                        <img class="minipatch" src="images/Apollo9.png">
+                        <p>Apollo 9</p>
+                    </div>
+                    <div class="mission">
+                        <img class="minipatch" src="images/Apollo10.png">
+                        <p>Apollo 10</p>
+                    </div>
+                    <div class="mission">
+                        <img class="minipatch" src="images/Apollo11.png">
+                        <p>Apollo 11</p>
+                    </div>
+                </div>
+                <div id="row2">
+                    <div class="mission">
+                        <img class="minipatch" src="images/Apollo12.png">
+                        <p>Apollo 12</p>
+                    </div>
+                    <div class="mission">
+                        <img class="minipatch" src="images/Apollo13.png">
+                        <p>Apollo 13</p>
+                    </div>
+                    <div class="mission">
+                        <img class="minipatch" src="images/Apollo14.png">
+                        <p>Apollo 14</p>
+                    </div>
+                    <div class="mission">
+                        <img class="minipatch" src="images/Apollo15.png">
+                        <p>Apollo 15</p>
+                    </div>
+                    <div class="mission">
+                        <img class="minipatch" src="images/Apollo16.png">
+                        <p>Apollo 16</p>
+                    </div>
+                    <div class="mission">
+                        <img class="minipatch" src="images/Apollo17.png">
+                        <p>Apollo 17</p>
+                    </div>
+                </div>
+            </div>
+            <div id="missionInfo">
+                <h2 class="nameText">Apollo 1</h2>
+                <p class="launchText">Launch Date: </p>
+                <p class="missionText">Mission: </p>
+                <p class="resultText">Result: </p>
+            </div>
+        </div>
+
+        <div id="interface">
+            <!-- The start div shows the introduction and start game buttons -->
+            <div id="start">
+                <h1>Apollo Program Trivia Game</h1>
+                <img src="images/Apollo_Program.svg" class="patch">
+                <p>Test your knowledge about the manned Apollo missions</p>
+                <div id = "buttons">
+                    <button id="1Player" class="start">Start 1 Player</button>
+                    <button id="2Player" class="start">Start 2 Players</button>
+                </div>
+            </div>
+            <!-- The play div shows the instructions, question, and answers during gameplay -->
+            <div id="play">
+                <div id="prompt">
+                    <h2>
+                        Select the mission goal for each program mission:
+                    </h2>
+                </div>
+                <div id="question">
+                    <div id="mission">
+                        <img src="" class="patch">
+                        <div class="nameText"></div>
+                        <div class="launchText"></div>
+                    </div>
+                    <div id="answers"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The result div shows the end game messages and the reset button -->
+        <div id="result">
+            <h2></h2>
+            <p>Hover over each mission to see more information about the mission!</p>
+            <button>Play Again</button>
+        </div>
+
+        <script src="js/apollo.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
